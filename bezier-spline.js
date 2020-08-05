@@ -176,9 +176,9 @@ Spline.prototype.pos = function(time){
 	Draws the line
 */
 Spline.prototype.draw = function(ctx){
-	ctx.beginPath();
 	var pos;
 	for(var i=0; i<this.duration; i+=10){
+		ctx.beginPath();
 		ctx.lineWidth = pos.p
 		pos = this.pos(i); //bezier(i/max,p1, c1, c2, p2);
 		if(Math.floor(i/100)%2==0){
