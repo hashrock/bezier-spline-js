@@ -179,8 +179,8 @@ Spline.prototype.draw = function(ctx){
 	var pos;
 	for(var i=0; i<this.duration; i+=10){
 		ctx.beginPath();
-		ctx.lineWidth = pos.p
 		pos = this.pos(i); //bezier(i/max,p1, c1, c2, p2);
+		ctx.lineWidth = pos.z
 		if(Math.floor(i/100)%2==0){
 			ctx.lineTo(pos.x, pos.y);
 		}else{
