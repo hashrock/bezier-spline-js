@@ -101,42 +101,6 @@ Spline.prototype.vector = function(t){
 	}
 }
 
-/*
-	Draws the control points
-*/
-Spline.prototype.drawControlPoints = function(ctx, color){
-	ctx.fillStyle = color||"#f60";
-	ctx.strokeStyle = "#fff";
-	ctx.lineWidth = 2; 
-	for(var i=0; i<this.length; i++){
-		var p = this.points[i];
-		var c1 = this.controls[i][0];
-		var c2 = this.controls[i][1];
-
-		ctx.beginPath();
-		ctx.moveTo(c1.x,c1.y);
-		ctx.lineTo(p.x,p.y);
-		ctx.lineTo(c2.x,c2.y);
-		ctx.stroke();
-					
-		ctx.beginPath();
-		ctx.arc(c1.x, c1.y, 3, 0, 2 * Math.PI, false);
-		ctx.fill();
-		ctx.stroke();
-		
-		ctx.beginPath();
-		ctx.arc(c2.x, c2.y, 3, 0, 2 * Math.PI, false);
-		ctx.fill();
-		ctx.stroke();
-		
-
-		ctx.beginPath();
-		ctx.arc(p.x, p.y, 7, 0, 2 * Math.PI, false);
-		ctx.fill();
-		ctx.stroke();
-	}
-	return this;
-}
 
 /*
 	Gets the position of the point, given time.
