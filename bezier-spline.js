@@ -124,11 +124,6 @@ Spline.prototype.drawControlPoints = function(ctx, color){
 		ctx.fill();
 		ctx.stroke();
 		
-		/*ctx.beginPath();
-		ctx.arc(this.centers[i].x, this.centers[i].y, 5, 0, 2 * Math.PI, false);
-		ctx.fill();
-		ctx.stroke();*/
-		
 		ctx.beginPath();
 		ctx.arc(c2.x, c2.y, 3, 0, 2 * Math.PI, false);
 		ctx.fill();
@@ -180,9 +175,7 @@ Spline.prototype.pos = function(time){
 /*
 	Draws the line
 */
-Spline.prototype.draw = function(ctx,color){
-	ctx.strokeStyle = color || "#7e5e38"; // line color
-	ctx.lineWidth = 14;
+Spline.prototype.draw = function(ctx){
 	ctx.beginPath();
 	var pos;
 	for(var i=0; i<this.duration; i+=10){
